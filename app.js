@@ -4,8 +4,12 @@ const connectDB = require('./configs/database');
 const bodyParser = require('body-parser');		
 const router = require('./routes/index'); // Import the routes
 const { getFoods } = require('./controllers/food.controller'); // Import the getFoods controller
+const methodOverride = require('method-override'); // Add this line
+
 
 const PORT = process.env.PORT || 4001;
+app.use(methodOverride('_method'));
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

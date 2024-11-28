@@ -50,11 +50,13 @@
                         <td><%= food.price %></td>
                         <td><%= food.address %></td>
                         <td>
-                            <form action="/api/foods/<%= food._id %>" method="post" style="display: inline;">
-                                <input type="hidden" name="_method" value="DELETE">
+                            <form action="/api/foods/<%= food._id %>?_method=DELETE" method="POST" style="display: inline;">
                                 <button class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                            <form action="/api/foods/<%= food._id %>?_method=PUT" method="POST" style="display: inline;">
                                 <button class="btn btn-warning btn-sm">Edit</button>
                             </form>
+                            
                         </td>
                     </tr>
                 <% }); %>
